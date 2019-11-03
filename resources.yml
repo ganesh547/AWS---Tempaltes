@@ -1,0 +1,34 @@
+---
+ 
+  AWSTemplateFormatVersion: 2010-09-09
+
+  Parameters:
+    Bucket:
+      Type: String
+      AllowedValues:
+        - Gani_S3
+        - dsrkeurekk
+        - kjshrkeurhkwer
+  Resources:
+    S3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName:
+          Ref: Bucket
+        Tags:
+          - Key: Name
+            Value: S3
+
+    SG1:
+      Type: AWS::EC2::SecurityGroup         
+      Properties:
+        GroupDescription: This is my first Security Group
+        GroupName: Gani_SG1
+        Tags: 
+          - Key: Name
+            Value: security Group
+
+             
+
+
+     
